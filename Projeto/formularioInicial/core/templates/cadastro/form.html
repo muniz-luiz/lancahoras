@@ -1,0 +1,64 @@
+{%extends 'base.html'%}
+{%block content%}
+<form id="my-form" method="post">
+  {%csrf_token%}
+  <fieldset>
+    <div class="fieldset-wrapper">
+      <legend>Informações do cliente</legend>
+      <div class="input-wrapper">
+        <label for="costumer-select">Escolha o cliente <span>(escolha o cliente abaixo)</span></label>
+        <select id="costumer-select" name="cliente" required>
+          <option value=""></option>
+          <option value="credsystemrh">Credsystem RH</option>
+          <option value="credsystemhoo">Credsystem HOO</option>
+          <option value="credsystemtake">Credsystem BLIP</option>
+          <option value="fullsail">Full Sail</option>
+          <option value="edpempresas">EDP Empresas</option>                
+        </select>             
+      </div>
+      <div class="input-wrapper">
+        <label for="costumer-select">Tipo de atividade <span>(escolha o tipo de atividade)</span></label>
+        <select id="costumer-select" name="tipo" required>
+          <option value=""></option>
+          <option value="sustentacao">Sustentação</option>
+          <option value="bug">BUG</option>
+          <option value="tarefa">Tarefa</option>                           
+        </select>                 
+      </div>           
+      <div class="input-wrapper">
+        <label for="event-info">Informações extras <span>(descreva a atividade)</span></label>
+        <textarea id="event-info" cols="30" rows="10" name="info" required></textarea>        
+      </div>
+      <div class="input-wrapper">
+        <label for="event-category">Categoria</label>
+        <select id="event-category" name="categoria" required>
+          <option value=""></option>
+          <option value="projeto">Projeto</option>
+          <option value="sustentacao">Sustentação</option>
+          <option value="dev">Desenvolvimento</option>
+        </select>       
+      </div>       
+    </div>
+  </fieldset>
+  <fieldset>
+    <div class="fieldset-wrapper">
+      <legend>Horário</legend>
+
+      <div class="col-3">
+        <div class="input-wrapper">
+          <label for="costumer-date">Data</label>
+          <input type="date" id="costumer-date" name="data" required></input>        
+        </div>
+        <div class="input-wrapper">
+          <label for="costumer-begin">Início</label>
+          <input type="time" id="costumer-begin" name="horainicio" required step="1800"></input>        
+        </div>
+        <div class="input-wrapper">
+          <label for="costumer-end">Fim</label>
+          <input type="time" id="costumer-end" name="horafim" required step="1800"></input>        
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</form>
+{%endblock%}
